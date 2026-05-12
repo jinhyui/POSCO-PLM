@@ -9,14 +9,14 @@
 <style>
 /* ── RESET & ROOT ── */
 :root{
-  --bg:#FAF9F5;--bg2:#F8F7F3;--bg3:#F0EEEA;
-  --border:rgba(15,12,8,.08);--border2:rgba(15,12,8,.15);
-  --text:rgba(15,12,8,0.92);--text2:rgba(15,12,8,.6);--text3:rgba(15,12,8,.4);
-  --blue:#2563EB;--blue-dim:rgba(37,99,235,.1);
+  --bg:#F0F6FF;--bg2:#E8F0FF;--bg3:#E0EBFF;
+  --border:rgba(15,80,200,.08);--border2:rgba(15,80,200,.15);
+  --text:rgba(15,40,100,0.92);--text2:rgba(15,40,100,.6);--text3:rgba(15,40,100,.4);
+  --blue:#0D5FCC;--blue-dim:rgba(13,95,204,.1);
   --green:#10B981;--green-dim:rgba(16,185,129,.1);
-  --amber:#D97757;--amber-dim:rgba(217,119,87,.1);
+  --amber:#0D5FCC;--amber-dim:rgba(13,95,204,.1);
   --red:#DC2626;--red-dim:rgba(220,38,38,.1);
-  --cyan:#0891B2;--purple:#7C3AED;
+  --cyan:#0891B2;--purple:#2563EB;
   --r:8px;--r2:12px;
   --font:'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
   --mono:'IBM Plex Mono','Courier New',monospace;
@@ -33,7 +33,7 @@ body{font-family:var(--font);background:#FFFFFF;color:var(--text);font-size:13px
 /* ── LANDING ── */
 #landing{
   position:fixed;inset:0;z-index:9999;
-  background:#FFFFFF;
+  background:url('화면 캡처 2026-05-12 231626.png') center/cover no-repeat;
   display:flex;align-items:center;justify-content:center;
   transition:opacity .5s ease;
   overflow:hidden;
@@ -41,7 +41,11 @@ body{font-family:var(--font);background:#FFFFFF;color:var(--text);font-size:13px
 #landing.hidden{display:none;}
 .l-overlay{
   position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:transparent;
+  background:
+    radial-gradient(ellipse 70% 90% at 15% 50%, rgba(240,246,255,.92) 0%, rgba(240,246,255,.75) 50%, transparent 75%),
+    linear-gradient(to right, rgba(240,246,255,.95) 0%, rgba(240,246,255,.80) 30%, rgba(240,246,255,.2) 60%, transparent 100%),
+    linear-gradient(to top, rgba(240,246,255,.7) 0%, transparent 25%),
+    linear-gradient(to bottom, rgba(240,246,255,.6) 0%, transparent 18%);
 }
 .l-body{
   position:relative;z-index:2;
@@ -53,28 +57,28 @@ body{font-family:var(--font);background:#FFFFFF;color:var(--text);font-size:13px
   overflow-y:auto;
 }
 .l-logo{display:flex;align-items:center;gap:13px;margin-bottom:20px;animation:slideIn .6s .1s both;}
-.l-logo-icon{width:46px;height:46px;border-radius:11px;flex-shrink:0;background:linear-gradient(135deg,#B85D45,#D97757);display:flex;align-items:center;justify-content:center;font-size:21px;font-weight:700;color:#fff;font-family:var(--mono);box-shadow:0 4px 12px rgba(217,119,87,.3),0 0 0 1px rgba(217,119,87,.2);}
+.l-logo-icon{width:46px;height:46px;border-radius:11px;flex-shrink:0;background:linear-gradient(135deg,#0D5FCC,#1e40af);display:flex;align-items:center;justify-content:center;font-size:21px;font-weight:700;color:#fff;font-family:var(--mono);box-shadow:0 4px 12px rgba(13,95,204,.3),0 0 0 1px rgba(13,95,204,.2);}
 .l-logo-main{font-size:19px;font-weight:700;letter-spacing:-.02em;color:#e8eaf0;}
 .l-logo-sub{font-size:10px;color:#3d4a6a;font-family:var(--mono);margin-top:2px;letter-spacing:.05em;}
 .l-headline{font-size:clamp(32px,4.5vw,52px);font-weight:800;letter-spacing:-.04em;line-height:1.2;color:rgba(15,12,8,.92);margin-bottom:24px;animation:slideIn .6s .2s both;text-align:center;}
-.l-headline span{background:linear-gradient(100deg,#D97757 0%,#B85D45 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.l-headline span{background:linear-gradient(100deg,#0D5FCC 0%,#2563EB 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .l-tagline{font-size:15px;color:rgba(15,12,8,.6);line-height:1.8;margin-bottom:40px;max-width:700px;animation:slideIn .6s .3s both;text-align:center;}
 .l-tagline strong{color:rgba(200,210,230,.78);}
 
 /* Integration badges */
 .l-integrations{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap;animation:slideIn .6s .35s both;}
-.l-int-badge{display:flex;align-items:center;gap:6px;padding:5px 11px;border-radius:8px;background:rgba(217,119,87,.08);border:1px solid rgba(217,119,87,.18);font-size:11px;font-family:var(--mono);color:rgba(217,119,87,.7);}
-.l-int-badge span{color:#D97757;font-weight:600;}
+.l-int-badge{display:flex;align-items:center;gap:6px;padding:5px 11px;border-radius:8px;background:rgba(13,95,204,.08);border:1px solid rgba(13,95,204,.18);font-size:11px;font-family:var(--mono);color:rgba(13,95,204,.7);}
+.l-int-badge span{color:#0D5FCC;font-weight:600;}
 
 /* Speed stat */
 .l-speed-block{
   display:flex;align-items:center;gap:14px;
   padding:13px 18px;border-radius:12px;
-  background:rgba(217,119,87,.07);border:1px solid rgba(217,119,87,.18);
+  background:rgba(13,95,204,.07);border:1px solid rgba(13,95,204,.18);
   margin-bottom:18px;
   animation:slideIn .6s .4s both;
 }
-.l-speed-num{font-size:28px;font-weight:700;font-family:var(--mono);color:#D97757;line-height:1;flex-shrink:0;}
+.l-speed-num{font-size:28px;font-weight:700;font-family:var(--mono);color:#0D5FCC;line-height:1;flex-shrink:0;}
 .l-speed-num sup{font-size:14px;}
 .l-speed-text{font-size:12px;color:rgba(200,210,230,.5);line-height:1.6;}
 .l-speed-text strong{color:rgba(200,210,230,.75);}
@@ -82,12 +86,12 @@ body{font-family:var(--font);background:#FFFFFF;color:var(--text);font-size:13px
 /* Culture banner */
 .l-culture{
   padding:11px 16px;border-radius:10px;
-  background:rgba(217,119,87,.06);border:1px solid rgba(217,119,87,.15);
+  background:rgba(13,95,204,.06);border:1px solid rgba(13,95,204,.15);
   margin-bottom:22px;font-size:12px;line-height:1.7;
-  color:rgba(15,12,8,.5);
+  color:rgba(15,40,100,.6);
   animation:slideIn .6s .45s both;
 }
-.l-culture strong{color:#D97757;}
+.l-culture strong{color:#0D5FCC;}
 
 /* stat pills */
 .l-stats{display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap;animation:slideIn .6s .5s both;}
@@ -99,21 +103,21 @@ body{font-family:var(--font);background:#FFFFFF;color:var(--text);font-size:13px
 .l-btn{display:flex;flex-direction:column;align-items:center;gap:16px;padding:32px 28px;border-radius:16px;cursor:pointer;border:1px solid;transition:all .3s;backdrop-filter:blur(12px);flex:1;min-width:280px;text-align:center;}
 .l-btn:hover{transform:translateY(-8px);box-shadow:0 12px 32px rgba(0,0,0,.12);}
 .l-btn:active{transform:translateY(-4px);}
-.l-btn-new{background:rgba(217,119,87,.1);border-color:rgba(217,119,87,.28);}
-.l-btn-new:hover{background:rgba(217,119,87,.16);border-color:rgba(217,119,87,.6);box-shadow:0 8px 28px rgba(217,119,87,.2);}
-.l-btn-ops{background:rgba(217,119,87,.08);border-color:rgba(217,119,87,.22);}
-.l-btn-ops:hover{background:rgba(217,119,87,.13);border-color:rgba(217,119,87,.55);box-shadow:0 8px 28px rgba(217,119,87,.14);}
-.l-btn-plan{background:rgba(217,119,87,.09);border-color:rgba(217,119,87,.25);}
-.l-btn-plan:hover{background:rgba(217,119,87,.15);border-color:rgba(217,119,87,.55);box-shadow:0 8px 28px rgba(217,119,87,.16);}
+.l-btn-new{background:rgba(13,95,204,.1);border-color:rgba(13,95,204,.28);}
+.l-btn-new:hover{background:rgba(13,95,204,.16);border-color:rgba(13,95,204,.6);box-shadow:0 8px 28px rgba(13,95,204,.2);}
+.l-btn-ops{background:rgba(13,95,204,.08);border-color:rgba(13,95,204,.22);}
+.l-btn-ops:hover{background:rgba(13,95,204,.13);border-color:rgba(13,95,204,.55);box-shadow:0 8px 28px rgba(13,95,204,.14);}
+.l-btn-plan{background:rgba(13,95,204,.09);border-color:rgba(13,95,204,.25);}
+.l-btn-plan:hover{background:rgba(13,95,204,.15);border-color:rgba(13,95,204,.55);box-shadow:0 8px 28px rgba(13,95,204,.16);}
 .l-btn-ic{width:56px;height:56px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:28px;}
-.l-btn-new .l-btn-ic{background:rgba(217,119,87,.15);}
-.l-btn-ops .l-btn-ic{background:rgba(217,119,87,.15);}
-.l-btn-plan .l-btn-ic{background:rgba(217,119,87,.15);}
+.l-btn-new .l-btn-ic{background:rgba(13,95,204,.15);}
+.l-btn-ops .l-btn-ic{background:rgba(13,95,204,.15);}
+.l-btn-plan .l-btn-ic{background:rgba(13,95,204,.15);}
 .l-btn-body{flex:1;text-align:center;width:100%;}
 .l-btn-title{font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px;color:rgba(15,12,8,.92);}
-.l-btn-new .l-btn-title{color:#D97757;}
-.l-btn-ops .l-btn-title{color:#D97757;}
-.l-btn-plan .l-btn-title{color:#D97757;}
+.l-btn-new .l-btn-title{color:#0D5FCC;}
+.l-btn-ops .l-btn-title{color:#0D5FCC;}
+.l-btn-plan .l-btn-title{color:#0D5FCC;}
 .l-btn-desc{font-size:13px;color:rgba(15,12,8,.6);line-height:1.6;}
 .l-btn-arr{display:none;}
 .l-btn:hover .l-btn-arr{display:none;}
@@ -147,16 +151,16 @@ body{font-family:var(--font);background:#FFFFFF;color:var(--text);font-size:13px
 #ps-4::before{content:'4';}#ps-5::before{content:'5';}#ps-6::before{content:'6';}
 #ps-1::after{content:'시장·원료';}#ps-2::after{content:'수요처';}#ps-3::after{content:'노후 공장';}
 #ps-4::after{content:'공장 옵션';}#ps-5::after{content:'5년 IRR';}#ps-6::after{content:'투자 실행';}
-.plan-step:hover{background:rgba(15,12,8,.07);color:var(--text2);}
+.plan-step:hover{background:rgba(15,40,100,.07);color:var(--text2);}
 .plan-step.active{
-  background:rgba(217,119,87,.14);
-  border-color:rgba(217,119,87,.4);
-  color:#D97757;
-  box-shadow:0 0 16px rgba(217,119,87,.15);
+  background:rgba(13,95,204,.14);
+  border-color:rgba(13,95,204,.4);
+  color:#0D5FCC;
+  box-shadow:0 0 16px rgba(13,95,204,.15);
 }
 .plan-step.active::before{
-  background:#D97757;border-color:#D97757;color:#fff;
-  box-shadow:0 0 12px rgba(217,119,87,.5);
+  background:#0D5FCC;border-color:#0D5FCC;color:#fff;
+  box-shadow:0 0 12px rgba(13,95,204,.5);
 }
 .plan-step.done{color:rgba(16,185,129,.7);background:rgba(16,185,129,.04);border-color:rgba(16,185,129,.15);}
 .plan-step.done::before{content:'✓';background:rgba(16,185,129,.7);border-color:rgba(16,185,129,.7);color:#fff;font-size:11px;}
@@ -354,11 +358,11 @@ textarea.mcomment{width:100%;background:var(--bg3);border:1px solid var(--border
 
     <!-- Speed stat -->
     <div class="l-speed-block">
-      <div class="l-speed-num">100<sup>만</sup>배</div>
+      <div class="l-speed-num">⚡</div>
       <div class="l-speed-text">
-        <strong>AI가 판단하고 실행합니다</strong><br>
-        보고서 작성 · 보고 · 회의 · 결재에 걸리던 시간을<br>
-        Claude AI가 즉각 판단하여 업무 속도가 100만 배 이상 빨라집니다.
+        <strong>업무 속도 100배 이상 향상</strong><br>
+        AI가 판단하고 실행합니다<br>
+        보고서 작성 · 보고 · 회의 · 결재에 걸리던 시간을 대폭 단축합니다.
       </div>
     </div>
 
