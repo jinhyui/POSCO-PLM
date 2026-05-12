@@ -10,8 +10,8 @@
 /* ── RESET & ROOT ── */
 :root{
   --bg:#F0F6FF;--bg2:#E8F0FF;--bg3:#E0EBFF;
-  --border:rgba(15,80,200,.08);--border2:rgba(15,80,200,.15);
-  --text:rgba(15,40,100,0.92);--text2:rgba(15,40,100,.6);--text3:rgba(15,40,100,.4);
+  --border:rgba(15,80,200,.15);--border2:rgba(15,80,200,.25);
+  --text:#0D2A70;--text2:#1A3A85;--text3:#2A4A95;
   --blue:#0D5FCC;--blue-dim:rgba(13,95,204,.1);
   --green:#10B981;--green-dim:rgba(16,185,129,.1);
   --amber:#0D5FCC;--amber-dim:rgba(13,95,204,.1);
@@ -22,7 +22,7 @@
   --mono:'IBM Plex Mono','Courier New',monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:var(--font);background:#FFFFFF;color:var(--text);font-size:13px;line-height:1.5;height:100vh;overflow:hidden;}
+body{font-family:var(--font);background:#FFFFFF;color:#0D2A70;font-size:13px;line-height:1.5;height:100vh;overflow:hidden;}
 ::-webkit-scrollbar{width:4px;height:4px;}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px;}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
@@ -256,10 +256,10 @@ tr:hover td{background:var(--bg3);}
 
 /* Alerts */
 .al{display:flex;align-items:flex-start;gap:10px;padding:9px 12px;border-radius:var(--r);margin-bottom:7px;font-size:12px;line-height:1.5;border:1px solid;}
-.al-i{background:var(--blue-dim);border-color:rgba(59,130,246,.2);color:#93c5fd;}
-.al-w{background:var(--amber-dim);border-color:rgba(245,158,11,.2);color:#fcd34d;}
-.al-o{background:var(--green-dim);border-color:rgba(34,197,94,.2);color:#86efac;}
-.al-r{background:var(--red-dim);border-color:rgba(239,68,68,.2);color:#fca5a5;}
+.al-i{background:rgba(13,95,204,.1);border-color:rgba(13,95,204,.3);color:#0D5FCC;}
+.al-w{background:rgba(217,119,87,.1);border-color:rgba(217,119,87,.3);color:#D97757;}
+.al-o{background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.3);color:#10B981;}
+.al-r{background:rgba(220,38,38,.1);border-color:rgba(220,38,38,.3);color:#DC2626;}
 
 /* Buttons */
 .btn{padding:6px 14px;font-size:12px;font-weight:500;border-radius:var(--r);cursor:pointer;font-family:var(--font);transition:all .12s;border:1px solid var(--border2);background:var(--bg3);color:var(--text);}
@@ -271,7 +271,7 @@ tr:hover td{background:var(--bg3);}
 
 /* Fields */
 .field{display:flex;flex-direction:column;gap:5px;margin-bottom:10px;}
-.field label{font-size:11px;color:var(--text3);}
+.field label{font-size:11px;color:#1A3A85;font-weight:600;}
 .field input,.field select{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r);padding:7px 10px;font-size:12px;color:var(--text);font-family:var(--font);outline:none;}
 .field input:focus,.field select:focus{border-color:var(--blue);}
 .field select option{background:var(--bg2);}
@@ -451,7 +451,7 @@ textarea.mcomment{width:100%;background:var(--bg3);border:1px solid var(--border
     <div class="pg active" id="plan-pg-1">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
         <div>
-          <div style="font-size:11px;color:#fb923c;font-family:var(--mono);letter-spacing:.08em;margin-bottom:4px;">STEP 1 / 6</div>
+          <div style="font-size:11px;color:#D97757;font-family:var(--mono);letter-spacing:.08em;margin-bottom:4px;">STEP 1 / 6</div>
           <div style="font-size:18px;font-weight:700;letter-spacing:-.02em;">시장 환경 및 원료 가격 분석</div>
         </div>
         <span class="stream"><span class="sdot" style="background:#fb923c;"></span>외부 데이터 실시간</span>
@@ -474,7 +474,7 @@ textarea.mcomment{width:100%;background:var(--bg3);border:1px solid var(--border
             <div class="pr"><span class="pr-lbl" style="width:80px">전력</span><div class="pr-bar"><div class="pr-fill" style="width:28%;background:#a855f7"></div></div><span class="pr-val">15%</span></div>
             <div class="pr"><span class="pr-lbl" style="width:80px">LNG</span><div class="pr-bar"><div class="pr-fill" style="width:78%;background:#ef4444"></div></div><span class="pr-val">52%</span></div>
           </div>
-          <div style="margin-top:14px;padding:11px 13px;background:rgba(34,197,94,.06);border-left:3px solid var(--green);border-radius:0 var(--r) var(--r) 0;font-size:11px;color:#86efac;line-height:1.7;">
+          <div style="margin-top:14px;padding:11px 13px;background:rgba(34,197,94,.06);border-left:3px solid var(--green);border-radius:0 var(--r) var(--r) 0;font-size:11px;color:#10B981;line-height:1.7;">
             ✓ <strong>고철·전력 변동성 낮음</strong> → 전기로/유도용해로 투자에 유리한 환경
           </div>
         </div>
@@ -504,7 +504,7 @@ textarea.mcomment{width:100%;background:var(--bg3);border:1px solid var(--border
     <div class="pg" id="plan-pg-2">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
         <div>
-          <div style="font-size:11px;color:#fb923c;font-family:var(--mono);letter-spacing:.08em;margin-bottom:4px;">STEP 2 / 6</div>
+          <div style="font-size:11px;color:#D97757;font-family:var(--mono);letter-spacing:.08em;margin-bottom:4px;">STEP 2 / 6</div>
           <div style="font-size:18px;font-weight:700;letter-spacing:-.02em;">수요처 분석 — 시장 수요 및 성장성</div>
         </div>
         <span class="stream"><span class="sdot" style="background:#fb923c;"></span>고객사 데이터</span>
@@ -547,7 +547,7 @@ textarea.mcomment{width:100%;background:var(--bg3);border:1px solid var(--border
     <div class="pg" id="plan-pg-3">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
         <div>
-          <div style="font-size:11px;color:#fb923c;font-family:var(--mono);letter-spacing:.08em;margin-bottom:4px;">STEP 3 / 6</div>
+          <div style="font-size:11px;color:#D97757;font-family:var(--mono);letter-spacing:.08em;margin-bottom:4px;">STEP 3 / 6</div>
           <div style="font-size:18px;font-weight:700;letter-spacing:-.02em;">노후 공장 분석 — 교체·신설 우선순위</div>
         </div>
         <span class="stream"><span class="sdot" style="background:#fb923c;"></span>EAM · PIMS 연동</span>
@@ -586,7 +586,7 @@ textarea.mcomment{width:100%;background:var(--bg3);border:1px solid var(--border
     <div class="pg" id="plan-pg-4">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
         <div>
-          <div style="font-size:11px;color:#fb923c;font-family:var(--mono);letter-spacing:.08em;margin-bottom:4px;">STEP 4 / 6</div>
+          <div style="font-size:11px;color:#D97757;font-family:var(--mono);letter-spacing:.08em;margin-bottom:4px;">STEP 4 / 6</div>
           <div style="font-size:18px;font-weight:700;letter-spacing:-.02em;">신규 공장 옵션 검토</div>
         </div>
         <span class="stream"><span class="sdot" style="background:#fb923c;"></span>설계 옵션 비교</span>
@@ -597,7 +597,7 @@ textarea.mcomment{width:100%;background:var(--bg3);border:1px solid var(--border
         <div class="card" style="margin-bottom:0;border-top:3px solid #3b82f6;cursor:pointer;" onclick="planSelectOption('efarc')" id="opt-efarc">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px;">
             <div style="width:36px;height:36px;border-radius:8px;background:rgba(59,130,246,.15);display:flex;align-items:center;justify-content:center;font-size:18px;">⚡</div>
-            <div style="flex:1"><div style="font-size:13px;font-weight:700;color:#93c5fd;">전기로 (EAF)</div><div style="font-size:10px;color:var(--text3)">Electric Arc Furnace</div></div>
+            <div style="flex:1"><div style="font-size:13px;font-weight:700;color:#0D5FCC;">전기로 (EAF)</div><div style="font-size:10px;color:var(--text3)">Electric Arc Furnace</div></div>
             <span class="badge b-blue" id="opt-efarc-badge">검토중</span>
           </div>
           <div style="font-size:11px;color:var(--text2);line-height:1.6;margin-bottom:9px;">고철 + 전력 활용. 탄소배출 75% 감축. 자동차강·이차전지강 적합.</div>
@@ -612,7 +612,7 @@ textarea.mcomment{width:100%;background:var(--bg3);border:1px solid var(--border
         <div class="card" style="margin-bottom:0;border-top:3px solid #a855f7;cursor:pointer;" onclick="planSelectOption('induction')" id="opt-induction">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px;">
             <div style="width:36px;height:36px;border-radius:8px;background:rgba(168,85,247,.15);display:flex;align-items:center;justify-content:center;font-size:18px;">🔥</div>
-            <div style="flex:1"><div style="font-size:13px;font-weight:700;color:#c4b5fd;">유도용해로 (IF)</div><div style="font-size:10px;color:var(--text3)">Induction Furnace</div></div>
+            <div style="flex:1"><div style="font-size:13px;font-weight:700;color:#7C3AED;">유도용해로 (IF)</div><div style="font-size:10px;color:var(--text3)">Induction Furnace</div></div>
             <span class="badge b-purple" id="opt-induction-badge">검토중</span>
           </div>
           <div style="font-size:11px;color:var(--text2);line-height:1.6;margin-bottom:9px;">소량 다품종 특수강 적합. 고급강·전기강판·합금강 생산.</div>
@@ -627,7 +627,7 @@ textarea.mcomment{width:100%;background:var(--bg3);border:1px solid var(--border
         <div class="card" style="margin-bottom:0;border-top:3px solid #f59e0b;cursor:pointer;" onclick="planSelectOption('rawyard')" id="opt-rawyard">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px;">
             <div style="width:36px;height:36px;border-radius:8px;background:rgba(245,158,11,.15);display:flex;align-items:center;justify-content:center;font-size:18px;">🏗</div>
-            <div style="flex:1"><div style="font-size:13px;font-weight:700;color:#fcd34d;">원료 야드 (Yard)</div><div style="font-size:10px;color:var(--text3)">Raw Material Yard</div></div>
+            <div style="flex:1"><div style="font-size:13px;font-weight:700;color:#D97757;">원료 야드 (Yard)</div><div style="font-size:10px;color:var(--text3)">Raw Material Yard</div></div>
             <span class="badge b-amber" id="opt-rawyard-badge">검토중</span>
           </div>
           <div style="font-size:11px;color:var(--text2);line-height:1.6;margin-bottom:9px;">고철·합금철 통합 저장·전처리. 전기로 단지 연계 인프라.</div>
@@ -664,7 +664,7 @@ textarea.mcomment{width:100%;background:var(--bg3);border:1px solid var(--border
     <div class="pg" id="plan-pg-5">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
         <div>
-          <div style="font-size:11px;color:#fb923c;font-family:var(--mono);letter-spacing:.08em;margin-bottom:4px;">STEP 5 / 6</div>
+          <div style="font-size:11px;color:#D97757;font-family:var(--mono);letter-spacing:.08em;margin-bottom:4px;">STEP 5 / 6</div>
           <div style="font-size:18px;font-weight:700;letter-spacing:-.02em;">5년 IRR 종합 타당성 분석</div>
         </div>
         <span class="stream"><span class="sdot" style="background:#06b6d4;"></span>Claude AI 시뮬레이션</span>
@@ -699,7 +699,7 @@ textarea.mcomment{width:100%;background:var(--bg3);border:1px solid var(--border
 
       <!-- AI Verdict -->
       <div class="card" style="background:linear-gradient(135deg,rgba(34,197,94,.1),rgba(6,182,212,.06));border-color:rgba(34,197,94,.25);">
-        <div class="card-hdr"><span class="card-title" style="color:#86efac;">🤖 AI 종합 판단 — 5년 IRR 타당성</span><button class="btn" onclick="planRunAI()" style="font-size:11px;padding:4px 10px;">🤖 재분석</button></div>
+        <div class="card-hdr"><span class="card-title" style="color:#10B981;">🤖 AI 종합 판단 — 5년 IRR 타당성</span><button class="btn" onclick="planRunAI()" style="font-size:11px;padding:4px 10px;">🤖 재분석</button></div>
         <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:rgba(0,0,0,.2);border-radius:var(--r);margin-bottom:12px;">
           <div style="font-size:44px;">✅</div>
           <div style="flex:1;">
@@ -718,7 +718,7 @@ textarea.mcomment{width:100%;background:var(--bg3);border:1px solid var(--border
     <div class="pg" id="plan-pg-6">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
         <div>
-          <div style="font-size:11px;color:#fb923c;font-family:var(--mono);letter-spacing:.08em;margin-bottom:4px;">STEP 6 / 6</div>
+          <div style="font-size:11px;color:#D97757;font-family:var(--mono);letter-spacing:.08em;margin-bottom:4px;">STEP 6 / 6</div>
           <div style="font-size:18px;font-weight:700;letter-spacing:-.02em;">투자 실행 — 의사결정 및 자동 처리</div>
         </div>
         <span class="stream"><span class="sdot" style="background:var(--green);"></span>실행 단계</span>
@@ -726,8 +726,8 @@ textarea.mcomment{width:100%;background:var(--bg3);border:1px solid var(--border
 
       <!-- Summary banner -->
       <div class="card" style="background:linear-gradient(135deg,rgba(251,146,60,.08),rgba(168,85,247,.06));border-color:rgba(251,146,60,.25);margin-bottom:14px;">
-        <div style="font-size:11px;color:#fb923c;font-family:var(--mono);margin-bottom:6px;letter-spacing:.08em;">투자 기획 종합 요약</div>
-        <div style="font-size:18px;font-weight:700;line-height:1.5;margin-bottom:12px;color:var(--text);">전기로 + 유도용해로 + 원료야드 <span style="color:#fb923c;">통합 투자 ₩8,400억</span> · <span style="color:var(--green);">5년 IRR 22.8% · NPV +₩3,840억</span></div>
+        <div style="font-size:11px;color:#D97757;font-family:var(--mono);margin-bottom:6px;letter-spacing:.08em;">투자 기획 종합 요약</div>
+        <div style="font-size:18px;font-weight:700;line-height:1.5;margin-bottom:12px;color:var(--text);">전기로 + 유도용해로 + 원료야드 <span style="color:#D97757;">통합 투자 ₩8,400억</span> · <span style="color:var(--green);">5년 IRR 22.8% · NPV +₩3,840억</span></div>
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
           <div style="padding:10px 12px;background:rgba(0,0,0,.25);border-radius:var(--r);"><div style="font-size:10px;color:var(--text3);margin-bottom:3px">시장 환경</div><div style="font-size:12px;font-weight:600;color:var(--green);">탄소세 폭등 → 전기로 유리</div></div>
           <div style="padding:10px 12px;background:rgba(0,0,0,.25);border-radius:var(--r);"><div style="font-size:10px;color:var(--text3);margin-bottom:3px">수요 매칭</div><div style="font-size:12px;font-weight:600;color:var(--green);">자동차·이차전지 친환경강 수요</div></div>
@@ -2008,10 +2008,10 @@ function niShowCase(idx) {
     <!-- Recommendation -->
     <div class="card" style="background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(6,182,212,.06));border-color:rgba(59,130,246,.25);">
       <div class="card-hdr">
-        <span class="card-title" style="color:#93c5fd;">💡 최종 권고안</span>
+        <span class="card-title" style="color:#0D5FCC;">💡 최종 권고안</span>
         <span class="stream"><span class="sdot"></span>AI 종합 분석</span>
       </div>
-      <div style="font-size:13px;color:#cbd5e1;line-height:1.9;padding:6px 0;">${c.recommendation}</div>
+      <div style="font-size:13px;color:#1A3A85;line-height:1.9;padding:6px 0;">${c.recommendation}</div>
       <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px;">
         <button class="btn">📋 보고서 다운로드</button>
         <button class="btn">🤖 AI 재분석</button>
